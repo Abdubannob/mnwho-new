@@ -23,10 +23,10 @@
                 <div id="mySidebar" class="sidebar-overlay brand">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">CLOSE MENU &times;</a>
                     <div class="sidebar-overlay-content">
-                        <li><a href="#" class="menu-edit">Edit profile</a></li>
-                        <li><a href="#" class="menu-password">Email & password</a></li>
-                        <li><a href="#" class="menu-social-channel">Social channels</a></li>
-                        <li><a href="notification-brand.html" class="menu-notification">Notifcation settings</a></li>
+                        <li><a href="pre-production.html" class="menu-edit">Pre-Production</a></li>
+                        <li><a href="../production-ui/production.html" class="menu-password">Production</a></li>
+                        <li><a href="../post-production-ui/post-production.html" class="menu-social-channel">Post-production</a></li>
+                        <!-- <li><a href="notification-brand.html" class="menu-notification">Notifcation settings</a></li> -->
                     </div>
                 </div>
             </div>
@@ -53,6 +53,8 @@
     </nav>
    </header>
    <div class="container-responsive">
+    <button class="can-submenu"><img src="../../images/myicons/cancel-close-delete-svgrepo-com.svg" alt=""></button>
+    <button class="submenu-btn ">Submenu</button>
     <div class="fixed-wrapper pre-production-sidebar-body">
         <div class="sidebar ">
             <div class="sidebar-body d-flex" style="height: auto; min-height: -webkit-fill-available;">
@@ -70,9 +72,10 @@
                         <li><a href="#" class="btn avatar m-0"><img class="rounded-circle" src="../../images/ava.png" alt="ava"></a></li>
                         <li><a href="#" class="logout"></a></li>    
                     </ul>
-                    <button class="btn btn-sidebar" id="sidebtn"><img src="../../images/icons/sidebar-arrow.svg" alt="icon"></button>
+                    <button class="btn btn-sidebar" id="sidebtn"><img id="btn-img" src="../../images/icons/sidebar-arrow.svg" alt="icon"></button>
                 </div>
                 <div class="menu" id="menu">
+                    
                     <div class="search-submenu">
                         <input type="text" placeholder="Search">
                         <button><img src="../../images/submenu/search-item.svg" alt="search" ></button>
@@ -113,7 +116,7 @@
          <div class="story go-back articles" id="art">
             <div class="top-main">
                 <div class="nav-title-back">
-                    <a href="#" class="btn"><img src="../../images/storyliner/go-back.svg" alt="back" /></a>
+                    <a href="pre-production.html" class="btn"><img src="../../images/storyliner/go-back.svg" alt="back" /></a>
                 </div>
                 <p>Go back</p>  
                 <h1>Storyliners</h1>  
@@ -1395,6 +1398,25 @@
         sidebar.classList.toggle("active"),
         overlay.classList.toggle("active")
     }
+
+    let sidebars = document.getElementById("btn-img")
+    let submenu = document.querySelector(".submenu-btn")
+    let menu = document.querySelector(".menu")
+    let cansubmenu = document.querySelector(".can-submenu")
+    let cancels = document.querySelector(".can-submenu-active")
+    sidebars.onclick = function (){
+      submenu.classList.toggle("active-menu") 
+    }
+
+    submenu.onclick = function (){
+        menu.classList.add("menu-active")
+        cansubmenu.classList.toggle("can-submenu-active")
+    }
+    cansubmenu.onclick = function (){
+        menu.classList.remove("menu-active")
+        cansubmenu.classList.remove("can-submenu-active")
+    }
+    
     </script>
 
     

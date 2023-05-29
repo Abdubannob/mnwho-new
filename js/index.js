@@ -19,10 +19,12 @@ $(document).ready(function() {
 /*****sidebar menu list*****/
 function openSidebar() {
   document.getElementById("mySidebar").style.height = "100%";
+  document.querySelector(".sidebar").style.display = "none";
 }
 
 function closeSidebar() {
   document.getElementById("mySidebar").style.height = "0%";
+  document.querySelector(".sidebar").style.display = "flex";
 }
 /*********************/
 

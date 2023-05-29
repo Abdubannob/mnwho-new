@@ -148,3 +148,6 @@ socialtab.onclick = function () {
     NoArt.style.display = "none"
     Art.style.display ="flex"
     }
+
+
+    

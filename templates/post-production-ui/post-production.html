@@ -53,6 +53,8 @@
     </header>
    
     <div class="container-responsive">
+        <button class="can-submenu"><img src="../../images/myicons/cancel-close-delete-svgrepo-com.svg" alt=""></button>
+        <button class="submenu-btn post-production-submenu">Submenu</button>
         <div class="sidebar ">
             <div class="sidebar-body post-sidebar-body d-flex production-post" style="height: auto; min-height: -webkit-fill-available;">
                 <div class="social ">
@@ -65,11 +67,11 @@
                         <li><a href="#" class="bookmarks"></a></li>
                                       
                     </ul>
-                    <ul>
+                    <ul class="logout-sidebar">
                         <li><a href="#" class="btn avatar m-0"><img class="rounded-circle" src="../../images/ava.png" alt="ava"></a></li>
                         <li><a href="#" class="logout"></a></li>    
                     </ul>
-                    <button class="btn btn-sidebar" id="sidebtn"><img src="../../images/icons/sidebar-arrow.svg" alt="icon"></button>
+                    <button class="btn btn-sidebar" id="sidebtn"><img id="btn-img" src="../../images/icons/sidebar-arrow.svg" alt="icon"></button>
                 </div>
                 <div class="menu" id="menu">
                     <div class="search-submenu">
@@ -706,6 +708,24 @@
     btn.onclick = function() {
         sidebar.classList.toggle("active"),
         overlay.classList.toggle("active")
+    }
+
+    let sidebars = document.getElementById("btn-img")
+    let submenu = document.querySelector(".submenu-btn")
+    let menu = document.querySelector(".menu")
+    let cansubmenu = document.querySelector(".can-submenu")
+    let cancels = document.querySelector(".can-submenu-active")
+    sidebars.onclick = function (){
+      submenu.classList.toggle("active-menu") 
+    }
+
+    submenu.onclick = function (){
+        menu.classList.add("menu-active")
+        cansubmenu.classList.toggle("can-submenu-active")
+    }
+    cansubmenu.onclick = function (){
+        menu.classList.remove("menu-active")
+        cansubmenu.classList.remove("can-submenu-active")
     }
     </script>
 

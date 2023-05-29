@@ -52,6 +52,9 @@
     </nav>
    </header>
     <div class="container-responsive">
+        <button class="can-submenu"><img src="../../images/myicons/cancel-close-delete-svgrepo-com.svg" alt=""></button>
+
+        <button class="submenu-btn production-submenu">Submenu</button>
        <div class="fixed-wrapper">
         <div class="sidebar ">
             <div class="sidebar-body production-sidebar-body d-flex production-nav" style="height: auto; min-height: -webkit-fill-available;">
@@ -65,11 +68,11 @@
                         <li><a href="linkedin/linkedin-brand.html" class="bookmarks"></a></li>
                                       
                     </ul>
-                    <ul>
+                    <ul class="logout-sidebar">
                         <li><a href="#" class="btn avatar m-0"><img class="rounded-circle" src="../../images/ava.png" alt="ava"></a></li>
                         <li><a href="#" class="logout"></a></li>    
                     </ul>
-                    <button class="btn btn-sidebar" id="sidebtn"><img src="../../images/icons/sidebar-arrow.svg" alt="icon"></button>
+                    <button class="btn btn-sidebar" id="sidebtn"><img id="btn-img" src="../../images/icons/sidebar-arrow.svg" alt="icon"></button>
                 </div>
                 <div class="menu" id="menu">
                     <div class="search-submenu">
@@ -145,7 +148,7 @@
                         <div id="Categories-selected-filters" class="selected-filter"></div>
                     </div> 
                 </div>
-                <div class="filter">
+                <div class="filter production-filter">
 
                 <button class="can-item"><img src="../../images/myicons/cancel-svgrepo-com.svg" alt="can"></button>
 
@@ -319,8 +322,8 @@
                     
                 </div>
                 <div class="filter-two">
-                    <button><img src="../../images/storyliner/lines-post-production.svg" alt="lines"></button>
-                    <button><img src="../../images/storyliner/dots-post-production.svg" alt="dots"></button>
+                    <button><img src="../../images/storyliner/lines-production.svg" alt="lines"></button>
+                    <button><img src="../../images/storyliner/dots-production.svg" alt="dots"></button>
                     <select id="">
                         <option value="sortby">Sort By</option>
                         <option value="vlue">value1</option>
@@ -733,6 +736,26 @@
         sidebar.classList.toggle("active"),
         overlay.classList.toggle("active")
     }
+
+
+    let sidebars = document.getElementById("btn-img")
+    let submenu = document.querySelector(".submenu-btn")
+    let menu = document.querySelector(".menu")
+    let cansubmenu = document.querySelector(".can-submenu")
+    let cancels = document.querySelector(".can-submenu-active")
+    sidebars.onclick = function (){
+      submenu.classList.toggle("active-menu") 
+    }
+
+    submenu.onclick = function (){
+        menu.classList.add("menu-active")
+        cansubmenu.classList.toggle("can-submenu-active")
+    }
+    cansubmenu.onclick = function (){
+        menu.classList.remove("menu-active")
+        cansubmenu.classList.remove("can-submenu-active")
+    }
+
     </script>
 <script>
     let rangeMin = 100;

@@ -212,9 +212,7 @@ transform: translate3d(0,0,0); */
 
 
  @media (max-width: 1500px) {
-    .middle-menu{
-     display: none;
-    } 
+   
  
     .main-section{
      margin-left: 20px;

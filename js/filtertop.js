@@ -8,13 +8,13 @@ let can = document.querySelector(".can-item")
 
 filterMobile.onclick =function (){
     filterM.position = "fixed"
-    filterM.left = "30px"
+    filterM.left = "15px"
     filterM.top = "55px"
     // filterM.zIndex ="99"
 }
 
 can.onclick =function (){
     filterM.position = "fixed"
-    filterM.left = "-300px"
+    filterM.left = "-560px"
     filterM.transition ="all .3s linear"
 }
